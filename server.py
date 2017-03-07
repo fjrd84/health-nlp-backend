@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO, send
+from flask_socketio import SocketIO, send, emit
 
 app = Flask(__name__)
 
@@ -9,18 +9,17 @@ socketio = SocketIO(app)
 
 app.debug = True
 
+
 @app.route('/')
 def base_route():
     return 'health-nlp-backend'
 
-if __name__ == '__main__':
-    """app.run()"""
-    socketio.run(app)
 
-@socketio.on('message')
+@socketio.on('testnlp')
 def handle_message(message):
-    send(message)
+    print('Message received: ' + message)
+    emit('message', message)
 
-@socketio.on('json')
-def handle_json(json):
-    print('received json: ' + str(json))
+
+if __name__ == '__main__':
+    socketio.run(app)
