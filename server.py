@@ -1,25 +1,31 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO, send, emit
+"""
+This script starts the flask server, setting up the socket.io listeners.
+"""
+from flask import Flask
+from flask_socketio import SocketIO, emit
+import config
 
-app = Flask(__name__)
+APP = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'secret!'
+APP.config['SECRET_KEY'] = config.CONFIG['secretKey']
 
-socketio = SocketIO(app)
+SOCKETIO = SocketIO(APP)
 
-app.debug = True
+APP.debug = True
 
 
-@app.route('/')
+@APP.route('/')
 def base_route():
+    """ Return the name of the project on the base route """
     return 'health-nlp-backend'
 
 
-@socketio.on('testnlp')
+@SOCKETIO.on('testnlp')
 def handle_message(message):
-    print('Message received: ' + message)
+    """ Test socket.io connection: emit the received message """
+    print 'Message received: ' + message
     emit('message', message)
 
 
 if __name__ == '__main__':
-    socketio.run(app)
+    SOCKETIO.run(APP)

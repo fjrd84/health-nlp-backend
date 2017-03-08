@@ -10,6 +10,8 @@ Backend repository for the health-nlp project.
 
 `sudo pip install eventlet`
 
+`sudo pip install pytest pytest-xdist pytest-cov`
+
 ## Start the Server
 
 After installing the dependencies, simply run:
