@@ -3,11 +3,11 @@ This script starts the flask server, setting up the socket.io listeners.
 """
 from flask import Flask
 from flask_socketio import SocketIO, emit
-import config
+from src.config import CONFIG
 
 APP = Flask(__name__)
 
-APP.config['SECRET_KEY'] = config.CONFIG['secretKey']
+APP.config['SECRET_KEY'] = CONFIG['secretKey']
 
 SOCKETIO = SocketIO(APP)
 
@@ -21,7 +21,7 @@ def base_route():
 
 
 @SOCKETIO.on('testnlp')
-def handle_message(message):
+def test_message(message):
     """ Test socket.io connection: emit the received message """
     print 'Message received: ' + message
     emit('message', message)
