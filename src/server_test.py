@@ -1,7 +1,7 @@
 """
 server_test.py
 """
-from src.server import base_route
+from server import base_route
 
 def test_base_route():
     """ Testing the base route """
