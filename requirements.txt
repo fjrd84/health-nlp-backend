@@ -1,6 +1,9 @@
 Flask
 flask-socketio
 eventlet
+nose
+coverage
 pytest 
 pytest-xdist 
 pytest-cov
+requests_mock
