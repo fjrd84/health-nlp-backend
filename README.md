@@ -7,15 +7,7 @@ Backend repository for the health-nlp project.
 
 ## Install Dependencies
 
-`sudo pip install Flask`
-
-`sudo pip install flask-socketio`
-
-`sudo pip install eventlet`
-
-`sudo pip install pytest pytest-xdist pytest-cov`
-
-`sudo pip install coveralls`
+`sudo pip install -r requirements.txt`
 
 ## Start the Server
 
