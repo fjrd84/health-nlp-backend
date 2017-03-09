@@ -1,1 +1,1 @@
-pytest -f *_test.py
+pytest -f ./src/*_test.py

@@ -1,12 +1,8 @@
 """
 server_test.py
 """
-import server
+from src.server import base_route
 
-def funfunfun():
-    """ Example funfunfun function """
-    return 4
-
-def test_function():
-    """ Example test of funfunfun """
-    assert funfunfun() == 4
+def test_base_route():
+    """ Testing the base route """
+    assert base_route() == 'health-nlp-backend'
