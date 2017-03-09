@@ -1,0 +1,1 @@
+py.test -f --cov package.nlp_health_server --cov-report term-missing *_test.py 
