@@ -5,6 +5,6 @@ install:
   - pip install -r requirements.txt
   - pip install coveralls
 script:
-  coverage run --source=server ./nlp_health_server/server_test.py test
+  coverage run --source=server ./src/server_test.py test
 after_success:
   coveralls
