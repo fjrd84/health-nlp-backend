@@ -12,6 +12,8 @@ Backend repository for the health-nlp project.
 
 `sudo pip install pytest pytest-xdist pytest-cov`
 
+`sudo pip install coveralls`
+
 ## Start the Server
 
 After installing the dependencies, simply run:

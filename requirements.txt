@@ -1,0 +1,6 @@
+Flask
+flask-socketio
+eventlet
+pytest 
+pytest-xdist 
+pytest-cov
